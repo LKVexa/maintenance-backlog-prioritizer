@@ -1,0 +1,31 @@
+{
+ "build": "JY-S008-P001/run-0001 (0.1.1-partial, audit A009)",
+ "environment": {
+  "executor": "claude cowork session 01SaQzDRzMFXvRabmCC6JDJD (Claude, claude-fable-5)",
+  "python": "3.11.15",
+  "platform": "Linux-6.18.44-fc-v24-x86_64-with-glibc2.39",
+  "location": "Anthropic cloud container (Linux)"
+ },
+ "checks": [
+  {
+   "id": "unit-tests-final",
+   "command": "python3 -m unittest discover -s tests -t .",
+   "result": "PASS 16/16",
+   "captured_at": "2026-09-14T18:49:52.391746+00:00"
+  },
+  {
+   "id": "audit-probes",
+   "command": "PYTHONPATH=. python3 probes.py (A009 aliasing/error-contract/approval probes)",
+   "result": "PASS — all 4 baseline-reproduced defects verified fixed",
+   "captured_at": "2026-09-14T18:49:52.391746+00:00"
+  }
+ ],
+ "unrun_checks": [
+  "Windows-native launch UNRUN — no Windows runtime this session",
+  "independent review NOT PERFORMED",
+  "live connectors",
+  "adversarial/E2E testing programs",
+  "production readiness gates"
+ ],
+ "note": "Evidence current for these inputs on this host only."
+}
